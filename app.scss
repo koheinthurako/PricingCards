@@ -1,0 +1,108 @@
+$font-family-sans-serif: 'Montserrat', sans-serif;
+
+$primary:  hsl(236, 72%, 79%);
+$dark: hsl(232, 13%, 33%);
+$light: #fff;
+
+@import "./node_modules/bootstrap/scss/bootstrap.scss";
+@import "./node_modules/bootstrap-icons/font/bootstrap-icons.css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+body {
+  --bs-body-bg: #eeeeee;
+}
+
+.mainBg {
+    height: 100vh;
+    background-image: url(./PricingContents/images/bg-top.svg), url(./PricingContents/images/bg-bottom.svg);
+    background-repeat: no-repeat;
+    background-size: 23%;
+    background-position: top right, bottom left; 
+} 
+
+.btn-primary {
+    padding: 10px 30px;
+    background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+}
+
+.bg-primary {
+    background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+}
+
+.btn-light {
+    padding: 10px 30px;
+    background-color: #fff;
+}
+
+.button {
+    // background-color: hsl(236, 72%, 79%);
+    background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    width: 60px;
+    height: 30px;
+    border-radius: 60px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+}
+
+
+
+.button::before {
+    display: block;
+    background-color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 60px;
+    margin: 5px;
+    transition: 0.2s;
+    content: '';
+}
+
+#annuallly {
+    .button.active {
+        display: none;
+    }
+}
+
+input:checked + .button {
+    background-color: hsl(237, 63%, 64%);
+}
+
+input:checked + .button::before {
+    transform: translateX(30px);
+}
+
+input {
+    display: none;
+}
+
+hr {
+    color: rgb(154, 154, 154);
+}
+
+#mainCard {
+
+    hr {
+        color: white;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .col-lg-3 {
+        width: 340px;
+    }
+}
+
+@media screen and (min-width: 990px) {
+    .col-lg-3 {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .mainBg {
+        height: 100%;
+        background-size: 70%;
+        background-position: top right, bottom left; 
+    } 
+}
